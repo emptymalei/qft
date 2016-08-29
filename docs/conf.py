@@ -99,6 +99,9 @@ rst_prolog = """
 
 .. role:: highlight-text
    :class: highlight-text
+
+.. |nbsp| unicode:: 0xA0
+   :trim:
 """
 
 

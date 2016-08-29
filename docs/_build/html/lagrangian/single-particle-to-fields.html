@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1. From Particles to Fields &mdash; Quantum Field Theory Pi documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Pi',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Quantum Field Theory Pi documentation" href="../index.html" />
+    <link rel="up" title="2. Lagrangian" href="index.html" />
+    <link rel="next" title="3. References" href="../ref.html" />
+    <link rel="prev" title="2. Lagrangian" href="index.html" />
+<!-- <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-66327435-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+ -->
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  <html lang="en">
+
+
+  
+  <meta name="description" content="Quantum Field Theory Notes">
+  
+
+
+  
+  <meta name="keywords" content="Quantum Field Theory, Quantum, Field Theory">
+  
+
+
+  
+  <meta name="author" content="Lei Ma">
+  
+  <link rel="canonical" href="http://qft.readthedocs.io/lagrangian/single-particle-to-fields.html"/>
+
+
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+  </script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"]
+      });
+   });
+   </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      processEscapes: true
+    }
+  });
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        overlr: ['\\overset\\leftrightarrow{\#1}',1],
+        overl: ['\\overset\leftarrow{\#1}',1],
+        overr: ['\\overset\rightarrow{\#1}',1],
+        bra: ['\\left\\langle \#1\\right|',1],
+        ket: ['\\left| \#1\\right\\rangle',1],
+        braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+        avg: ['\\left< \#1 \\right>',1],
+        slashed: ['\\cancel{\#1}',1],
+        bold: ['\\boldsymbol{\#1}',1],
+        sech: ['\\operatorname{sech}{\#1}',1],
+        csch: ['\\operatorname{csch}{\#1}',1]
+      }
+    }
+  });
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+ 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ref.html" title="3. References"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="2. Lagrangian"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantum Field Theory Pi documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Lagrangian</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="from-particles-to-fields">
+<h1>2.1. From Particles to Fields<a class="headerlink" href="#from-particles-to-fields" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter we discuss the Lagrangian formalism of particles and fields.</p>
+<ol class="arabic simple">
+<li>Lagrangian and Euler-Lagrangian equation of single particle;</li>
+<li>Generalize single particle formalism to fields;</li>
+<li>Using the least action principle to derive some famous equation of motions: Klein-Gordon equation, Dirac equation, Maxwell equation, and equation for massive vector particles.</li>
+<li>Relation to statistical mechanics.</li>
+</ol>
+<div class="section" id="classical-mechanics">
+<h2>2.1.1. Classical Mechanics<a class="headerlink" href="#classical-mechanics" title="Permalink to this headline">¶</a></h2>
+<p>For single particle, we define a Lagrangian <span class="math">\(L(q_i,\dot q_i, t)\)</span> which is a function of generalized coordinate <span class="math">\(q_i\)</span>, its derivative, and time <span class="math">\(t\)</span>. To be precise, the generalized coordinates could be time dependent.</p>
+<p>Action is defined as the integral of Lagrangian over time,</p>
+<div class="math">
+\[S = \int dt L(q_i,\dot q_i, t).\]</div>
+<p>The principle that leads to the equation of motion that the particle obays is the one that extremize the action. Mathematically,</p>
+<div class="math">
+\[\delta S = 0,\]</div>
+<p>which gives us the Euler-Lagrangian equation,</p>
+<div class="math">
+\[\partial_t \left( \frac{\partial L}{\partial \dot q_i} \right) - \frac{\partial L}{\partial q_i} = 0.\]</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Derivation of Euler-Lagrangian Equation</p>
+<ul class="last simple">
+<li>[ ] Here goes the derivation</li>
+</ul>
+</div>
+<p>On the other hand, a Legendre transform of the Lagrangian is the Hamiltonian. For single particle</p>
+<div class="math">
+\[H = \dot q p - L,\]</div>
+<p>where the generalized momentum is <span class="math">\(p = \partial L/\partial \dot q\)</span>. The equation of motion starting from Hamiltonian is</p>
+<div class="math">
+\[\begin{split}\dot q &amp;= \frac{\partial H}{\partial p},\\
+\dot p &amp;= -\frac{\partial H}{\partial q}.\end{split}\]</div>
+</div>
+<div class="section" id="generalization-to-fields">
+<h2>2.1.2. Generalization to Fields<a class="headerlink" href="#generalization-to-fields" title="Permalink to this headline">¶</a></h2>
+<p>For single particle, the dynamics is described by where the particle is at a certain time. However, field spans over space and evolve over time. Thus we define a Lagrangian <span class="math">\(\mathcal L\)</span> at each space point, which should be called Lagrangian density. Integrate over space we find the Lagrangian</p>
+<div class="math">
+\[L = \int d^3x \mathcal L.\]</div>
+<p>To be more specific, Lagrangian density is a function of <span class="math">\(\phi_i(x^\mu)\)</span>, <span class="math">\(\phi_i(x^\mu)_{,\mu}\)</span>, where <span class="math">\(x^\mu\)</span> are the space time coordinates. Then</p>
+<div class="math">
+\[L(t) = \int d^3x \mathcal L(\phi_i(x^\mu),\phi_i(x^\mu)_{,\mu}).\]</div>
+<div class="hint admonition">
+<p class="first admonition-title">Lagrangian and Lagrangian Density</p>
+<p class="last">In quantum field theory, Lagrangian density is usually called Lagrangian.</p>
+</div>
+<p>Similar to single particle theory, action is defined as integral of Lagrangian over time,</p>
+<div class="math">
+\[S = \int dt L(t).\]</div>
+<p>Apply the same principle as the single particle case, we can derive the Euler-Lagrangian for the fields</p>
+<div class="math">
+\[\partial_\mu \left( \frac{\partial \mathcal L}{\partial ( \phi_{i,\mu} )} \right) - \frac{\partial \mathcal L}{\partial \phi_i} = 0.\]</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Derivation of Euler-Lagrangian Equation</p>
+<ul class="last simple">
+<li>[ ] Here goes the derivation</li>
+</ul>
+</div>
+<p>We can also define a momentum of field <span class="math">\(\phi_i\)</span>,</p>
+<div class="math">
+\[\Pi(x^\mu) = \frac{ \partial \mathcal L }{ \partial ( \partial_0 \phi_i )  }.\]</div>
+<p>The Hamiltonian density follows</p>
+<div class="math">
+\[\mathcal H = \dot \phi_i \Pi - \mathcal L.\]</div>
+</div>
+<div class="section" id="noether-s-theorem">
+<h2>2.1.3. Noether&#8217;s Theorem<a class="headerlink" href="#noether-s-theorem" title="Permalink to this headline">¶</a></h2>
+<p>Noether&#8217;s theorem deals with continuous symmetry.</p>
+<div class="section" id="noether-s-theorem-of-particles">
+<h3>2.1.3.1. Noether&#8217;s Theorem of Particles<a class="headerlink" href="#noether-s-theorem-of-particles" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="noether-s-theorem-of-fields">
+<h3>2.1.3.2. Noether&#8217;s Theorem of Fields<a class="headerlink" href="#noether-s-theorem-of-fields" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we have a continuous transformation, which is internal, that transforms the fields according to</p>
+<div class="math">
+\[\phi_i (x^\mu) \to \phi_i (x^\mu) + \delta \phi_i(x^\mu).\]</div>
+<p>For convenience, we explicity write the variation <span class="math">\(\delta \phi_i(x^\mu)\)</span> as a continuous quantity <span class="math">\(\alpha\)</span>, i.e.,</p>
+<div class="math">
+\[\delta \phi_i(x^\mu) = \alpha \Delta\phi(x^\mu).\]</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Planning the Proof</p>
+<ol class="last arabic simple">
+<li>Write down the variation of Lagrangian.</li>
+<li>Combine the terms and apply the Euler-Lagrangian equation.</li>
+<li>If the Lagrangian is invariant under such a continuous tranformation, blablabla.</li>
+</ol>
+</div>
+<p>The variation of Lagrangian is</p>
+<div class="math" id="equation-variation-of-lagrangian-fields">
+<span class="eqno">(1)</span>\[\delta \mathcal L(\phi_i, \dot \phi_i) = \frac{\partial \mathcal L}{\partial \phi_i} \delta \phi_i + \frac{\partial \mathcal L}{\partial \phi_{i,\mu}} \delta(\phi_{i,\mu}).\]</div>
+<p>We know that the variation and partial derivative can be exchanged, such that</p>
+<div class="math">
+\[\delta(\phi_{i,\mu}) = \partial_\mu (\delta \phi_i).\]</div>
+<p>We rewrite the second term in Eq.&nbsp;<a href="#equation-variation-of-lagrangian-fields">(1)</a>,</p>
+<div class="math">
+\[\begin{split}&amp;\frac{\partial \mathcal L}{\partial \phi_{i,\mu}} \delta(\phi_{i,\mu}) \\
+= &amp; \frac{\partial \mathcal L}{\partial \phi_{i,\mu}} \partial_\mu( \delta \phi_{i} ) \\
+= &amp; \partial_\mu\left( \frac{\partial \mathcal L}{\partial \phi_{i,\mu}} \delta \phi_{i} \right) - \delta \phi_{i} \partial_\mu \left( \frac{\partial \mathcal L}{\partial \phi_{i,\mu}}  \right).\end{split}\]</div>
+<p>Plug it back into Eq.&nbsp;<a href="#equation-variation-of-lagrangian-fields">(1)</a>, we have</p>
+<div class="math">
+\[\begin{split}\delta \mathcal L(\phi_i, \dot \phi_i) =&amp;  \frac{\partial \mathcal L}{\partial \phi_i} \delta \phi_i + \partial_\mu\left( \frac{\partial \mathcal L}{\partial \phi_{i,\mu}} \delta \phi_{i} \right) - \delta \phi_{i} \partial_\mu \left( \frac{\partial \mathcal L}{\partial \phi_{i,\mu}}  \right) \\
+= &amp;  \delta \phi_i \left(  \frac{\partial \mathcal L}{\partial \phi_i} - \partial_\mu \left( \frac{\partial \mathcal L}{\partial \phi_{i,\mu}}  \right) \right) + \partial_\mu\left( \frac{\partial \mathcal L}{\partial \phi_{i,\mu}} \delta \phi_{i} \right).\end{split}\]</div>
+<p>The first term is zero by Euler-Lagrangian equation. Thus</p>
+<div class="math">
+\[\delta \mathcal L(\phi_i, \dot \phi_i) =\partial_\mu\left( \frac{\partial \mathcal L}{\partial \phi_{i,\mu}} \delta \phi_{i} \right).\]</div>
+<p>Now we impose the condition that the Lagrangian is invariant under such a continuous transformation, so that <span class="math">\(\delta \mathcal L = 0\)</span>.</p>
+<div class="math" id="equation-constant-of-motion-fields-1">
+<span class="eqno">(2)</span>\[\partial_\mu\left( \frac{\partial \mathcal L}{\partial \phi_{i,\mu}} \delta \phi_{i} \right) = 0.\]</div>
+<p>Eq.&nbsp;<a href="#equation-constant-of-motion-fields-1">(2)</a> defines the <span class="highlight-text">constant of motion</span>. Put the definition of <span class="math">\(\delta \phi_i\)</span> back in,</p>
+<div class="math" id="equation-constant-of-motion-fields">
+<span class="eqno">(3)</span>\[\alpha \partial_\mu\left( \frac{\partial \mathcal L}{\partial \phi_{i,\mu}} \Delta \phi_{i} \right) = 0.\]</div>
+</div>
+</div>
+<div class="section" id="examples-of-lagrangian">
+<h2>2.1.4. Examples of Lagrangian<a class="headerlink" href="#examples-of-lagrangian" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="klein-gordon-equation">
+<h3>2.1.4.1. Klein-Gordon Equation<a class="headerlink" href="#klein-gordon-equation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="dirac-equation">
+<h3>2.1.4.2. Dirac Equation<a class="headerlink" href="#dirac-equation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="maxwell-equation">
+<h3>2.1.4.3. Maxwell Equation<a class="headerlink" href="#maxwell-equation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="equation-for-massive-vector-particles">
+<h3>2.1.4.4. Equation for Massive Vector Particles<a class="headerlink" href="#equation-for-massive-vector-particles" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="shrodinger-equation">
+<h3>2.1.4.5. Shrodinger Equation<a class="headerlink" href="#shrodinger-equation" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="refs-and-notes">
+<h2>2.1.5. Refs and Notes<a class="headerlink" href="#refs-and-notes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><em>Field Theory : A Modern Primer</em> by Pierre Ramond. The first chapter of this book is &#8220;How to Build an Action Functional&#8221;, which is self-explanary.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Quantum Field Theory</a></h1>
+
+
+
+<p class="blurb">Quantum Field Theory</p>
+
+
+
+<p>
+<iframe src="http://ghbtns.com/github-btn.html?user=emptymalei&repo=qft&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+<h3>Contents</h3>
+<p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preliminary/index.html">1. Preliminary</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Lagrangian</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">2.1. From Particles to Fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#classical-mechanics">2.1.1. Classical Mechanics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generalization-to-fields">2.1.2. Generalization to Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#noether-s-theorem">2.1.3. Noether&#8217;s Theorem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples-of-lagrangian">2.1.4. Examples of Lagrangian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#refs-and-notes">2.1.5. Refs and Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">4. Acknowledgement</a></li>
+</ul>
+
+
+<ul>
+	<li><a href="genindex.html">INDEX</a></li>
+</ul>
+<h3>Links</h3>
+<ul>
+   <li class="toctree-l1"><a href="http://neutrino.xyz" style="color:orange;"><i class="fa fa-globe"></i>&nbsp;Neutrino Physics</a></li>
+   <li class="toctree-l1"><a href="http://physics.openmetric.org" style="color:orange;"><i class="fa fa-fire"></i>&nbsp;Physics Notes</a></li>
+   <li class="toctree-l1"><a href="http://neutrino.xyz/neutrino-map" style="color:orange;"><i class="fa fa-map-signs"></i>&nbsp;Neutrino Map</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3>Support Us</h3>
+<p>
+Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
+<script data-gratipay-username="emptymalei"
+        data-gratipay-widget="button"
+        src="//gttp.co/v1.js"></script>
+</p>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer" style="border-top:1px solid #B1B4B6;">
+
+<!-- 多说评论框 start -->
+<!--
+  <div class="ds-thread" data-thread-key="" data-title="2.1. From Particles to Fields &mdash; Quantum Field Theory Pi documentation" data-url=""></div>
+-->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!--
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sci2fi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+-->
+<!-- 多说公共JS代码 end -->
+
+<!-- Disqus BEGIN -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'neuphysics';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<!-- Disqus END -->
+
+
+      &copy;2016, Lei Ma. | <a href="index.html">Licenses</a>
+      |
+      <a href="/genindex.html">Index</a>
+      |
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="../_sources/lagrangian/single-particle-to-fields.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-49034078-11']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>
