@@ -20,5 +20,6 @@ Here is also an index: `genindex.html <genindex.html>`_ .
    :numbered:
 
    preliminary/index.rst
+   action/index.rst
    ref.rst
    acknowledgement.rst
