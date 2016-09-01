@@ -22,5 +22,6 @@ Here is also an index: `genindex.html <genindex.html>`_ .
    preliminary/index.rst
    lagrangian/index.rst
    quantization/index.rst
+   susy/index.rst
    ref.rst
    acknowledgement.rst
