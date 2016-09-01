@@ -56,3 +56,13 @@ Meanwhile the energy levels are also related
    :class: toggle
 
    QED.
+
+
+
+References and Notes
+-----------------------
+
+
+1. `An Introduction to Supersymmetry in Quantum
+Mechanical Systems by T. Wellman <http://gaitskell.brown.edu/courses/SeniorThesis/2003_SeniorThesis/2003SeniorThesis_Wellman.pdf>`_
+2. Cooper, F., Khare, A., & Sukhatme, U. (1995). Supersymmetry and quantum mechanics. Physics Reports, 251(5-6), 267–385. doi:10.1016/0370-1573(94)00080-M.
