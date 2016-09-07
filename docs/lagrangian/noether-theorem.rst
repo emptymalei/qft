@@ -201,6 +201,28 @@ The 00 component is in fact the Hamiltonian density :math:`\mathcal H`.
 
 
 
+.. admonition:: Dialation and Noether Current
+   :class: note
+
+   Dilation can be written as
+
+   .. math::
+      x_\mu \to & a x^\mu,\\
+      \phi \to & a^{-1} \phi.
+
+   The Noether current corresponding to such transformation is
+
+   .. math::
+      j_{\mathrm D}^{\mu} = T^{\mu\rho}x_\rho + \frac{1}{2} \partial^\mu \phi^2.
+
+   Notice that Lagrangian
+
+   .. math::
+      \mathcal L = \frac{1}{2} \partial_\mu \phi \partial^\mu \phi - \frac{1}{4\,! } \lambda \phi^4,
+
+   which is :math:`\phi^4` theory, is invariant under dilation.
+
+
 
 
 
