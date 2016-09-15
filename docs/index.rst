@@ -20,7 +20,7 @@ Here is also an index: `genindex.html <genindex.html>`_ .
    :numbered:
 
    preliminary/index.rst
-   lagrangian/index.rst
+   symmetries/index.rst
    quantization/index.rst
    susy/index.rst
    ref.rst

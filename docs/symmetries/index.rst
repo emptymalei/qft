@@ -8,3 +8,4 @@ Lagrangian
 
    single-particle-to-fields.rst
    noether-theorem.rst
+   gauge-symmetries.rst

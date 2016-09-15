@@ -1,0 +1,95 @@
+Gauge Symmetries
+================================
+
+U(1) Global Gauge Invariance
+----------------------------------
+
+Assuming the Lagrangian is invariant under U(1) global gauge transformation
+
+.. math::
+   \psi(x) \to e^{i\alpha} \psi(x),
+
+we obtain the Noether current
+
+.. math::
+   j^\mu = - e \bar \psi \gamma^\mu \psi,
+
+which is conserved
+
+.. math::
+   \partial_\mu j^\mu = 0.
+
+
+
+.. admonition:: Derivation of Noether Current
+   :class: toggle
+
+   QED
+
+
+
+U(1) Local Gauge Invariance
+----------------------------------
+
+
+Introduce the U(1) local gauge transformation
+
+.. math::
+   \psi(x) \to e^{i\alpha(x) } \psi(x)
+
+to the Lagrangian, we notice that the Lagragian is generally not invariant. However, if we require it to be invariant, a new field :math:`A_\mu` should be introduced, so that
+
+.. math::
+   A_\mu \to A_\mu + \frac{1}{2} \partial_\mu \alpha(x).
+
+The way this new field comes into the Lagriangian is to replace all the derivatives :math:`\parital_\mu` with :math:`\mathrm D_\mu`,
+
+.. math::
+   \mathrm D_\mu = \partial_\mu - i e A_\mu.
+
+
+What about the kinetic term for this new field? It is constructed from the field strength tensor
+
+.. math::
+   F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu,
+
+so that the kinetic term is
+
+.. math::
+   - \frac{1}{4} F_{\mu\nu}F^{\mu\nu}.
+
+
+Finally we reach the new (QED) Lagrangian that is invariant under U(1) gauge transformation
+
+.. math::
+   \mathcal L = \bar \psi ( i\gamma^\nu \partial_\mu - m )\psi + e\bar \psi \gamma^\mu \partial_\mu \psi - \frac{1}{4} F_{\mu\nu} F^{\mu\nu} .
+
+
+
+Non-Abelian
+-------------------------------
+
+
+Introduce the non-abelian local gauge transformation
+
+.. math::
+   q(x) \to e^{i\alpha_a (x) T_a} q(x).
+
+The Lagrangian that is invariant under this transformation is
+
+.. math::
+   \mathcal  = \bar q (i\gamma^\mu \partial_\mu - m) q - g(\bar q \gamma^\mu T_a q) G_{\mu}^a - \frac{1}{4} G_{\mu\nu}^a G^{\mu\nu}_a.
+
+
+Mass
+------------------------
+
+Introducing mass to bosons will break the U(1) symmetry.
+
+1. Why preserve U(1) symmetry then?
+2. We introduce mass to bosons regardless of the breaking of U(1) symmetry.
+3. Such a mass term will lead to infinity in e-e scattering loop.
+4. Introduce cut-off to momentum.
+5. Still have infinity in higher order loop diagrams.
+6. Introduce infinite numbers of cut-off for the infinite infinities of infinite higher order loop diagrams.
+7. WTF.
