@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -7,28 +6,31 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Index &mdash; Quantum Field Theory 0.0.1 documentation</title>
+    <title>2.3. Gauge Symmetries &mdash; Quantum Field Theory 0.0.1 documentation</title>
     
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/modify.css" type="text/css" />
-    <link rel="stylesheet" href="_static/css/style.css" type="text/css" />
-    <link rel="stylesheet" href="_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
+        URL_ROOT:    '../',
         VERSION:     '0.0.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="Quantum Field Theory 0.0.1 documentation" href="index.html" />
+    <link rel="top" title="Quantum Field Theory 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="2. Lagrangian" href="index.html" />
+    <link rel="next" title="3. Quantization" href="../quantization/index.html" />
+    <link rel="prev" title="2.2. Noether’s Theorem" href="noether-theorem.html" />
 <!-- <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-66327435-2']);
@@ -78,7 +80,7 @@
   
   <meta name="author" content="Lei Ma">
   
-  <link rel="canonical" href="http://qft.readthedocs.io/genindex.html"/>
+  <link rel="canonical" href="http://qft.readthedocs.io/symmetries/gauge-symmetries.html"/>
 
 
 
@@ -145,9 +147,16 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="#" title="General Index"
+          <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Quantum Field Theory 0.0.1 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../quantization/index.html" title="3. Quantization"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="noether-theorem.html" title="2.2. Noether’s Theorem"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantum Field Theory 0.0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Lagrangian</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -156,11 +165,54 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="gauge-symmetries">
+<h1>2.3. Gauge Symmetries<a class="headerlink" href="#gauge-symmetries" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="u-1-global-gauge-invariance">
+<h2>2.3.1. U(1) Global Gauge Invariance<a class="headerlink" href="#u-1-global-gauge-invariance" title="Permalink to this headline">¶</a></h2>
+<p>Assuming the Lagrangian is invariant under U(1) global gauge transformation</p>
+<div class="math">
+\[\psi(x) \to e^{i\alpha} \psi(x),\]</div>
+<p>we obtain the Noether current</p>
+<div class="math">
+\[j^\mu = - e \bar \psi \gamma^\mu \psi,\]</div>
+<p>which is conserved</p>
+<div class="math">
+\[\partial_\mu j^\mu = 0.\]</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Derivation of Noether Current</p>
+<p class="last">QED</p>
+</div>
+</div>
+<div class="section" id="u-1-local-gauge-invariance">
+<h2>2.3.2. U(1) Local Gauge Invariance<a class="headerlink" href="#u-1-local-gauge-invariance" title="Permalink to this headline">¶</a></h2>
+<p>Introduce the U(1) local gauge transformation</p>
+<div class="math">
+\[\psi(x) \to e^{i\alpha(x) } \psi(x)\]</div>
+<p>to the Lagrangian, we notice that the Lagragian is generally not invariant. However, if we require it to be invariant, a new field <span class="math">\(A_\mu\)</span> should be introduced, so that</p>
+<div class="math">
+\[A_\mu \to A_\mu + \frac{1}{2} \partial_\mu \alpha(x).\]</div>
+<p>The way this new field comes into the Lagriangian is to replace all the derivatives <span class="math">\(\parital_\mu\)</span> with <span class="math">\(\mathrm D_\mu\)</span>,</p>
+<div class="math">
+\[\mathrm D_\mu = \partial_\mu - i e A_\mu.\]</div>
+<p>What about the kinetic term for this new field? It is constructed from the field strength tensor</p>
+<div class="math">
+\[F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu,\]</div>
+<p>so that the kinetic term is</p>
+<div class="math">
+\[- \frac{1}{4} F_{\mu\nu}F^{\mu\nu}.\]</div>
+<p>Finally we reach the new (QED) Lagrangian that is invariant under U(1) gauge transformation</p>
+<div class="math">
+\[\mathcal L = \bar \psi ( i\gamma^\nu \partial_\mu - m )\psi + e\bar \psi \gamma^\mu \partial_\mu \psi - \frac{1}{4} F_{\mu\nu} F^{\mu\nu} .\]</div>
+</div>
+<div class="section" id="non-abelian">
+<h2>2.3.3. Non-Abelian<a class="headerlink" href="#non-abelian" title="Permalink to this headline">¶</a></h2>
+<p>Introduce the non-abelian local gauge transformation</p>
+<div class="math">
+\[q(x) \to e^{i\alpha_a (x) T_a} q(x).\]</div>
+<p>The Lagrangian that is invariant under this transformation is</p>
+<div class="math">
+\[\mathcal  = \bar q (i\gamma^\mu \partial_\mu - m) q - g(\bar q \gamma^\mu T_a q) G_{\mu}^a - \frac{1}{4} G_{\mu\nu}^a G^{\mu\nu}_a.\]</div>
+</div>
 </div>
 
 
@@ -169,7 +221,7 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Quantum Field Theory</a></h1>
+<h1 class="logo"><a href="../index.html">Quantum Field Theory</a></h1>
 
 
 
@@ -185,13 +237,23 @@
 
 <h3>Contents</h3>
 <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="preliminary/index.html">1. Preliminary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="symmetries/index.html">2. Lagrangian</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quantization/index.html">3. Quantization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="susy/index.html">4. Supersymmetry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ref.html">5. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">6. Acknowledgement</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preliminary/index.html">1. Preliminary</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Lagrangian</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="single-particle-to-fields.html">2.1. From Particles to Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="noether-theorem.html">2.2. Noether&#8217;s Theorem</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">2.3. Gauge Symmetries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#u-1-global-gauge-invariance">2.3.1. U(1) Global Gauge Invariance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#u-1-local-gauge-invariance">2.3.2. U(1) Local Gauge Invariance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#non-abelian">2.3.3. Non-Abelian</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quantization/index.html">3. Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../susy/index.html">4. Supersymmetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref.html">5. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">6. Acknowledgement</a></li>
 </ul>
 
 
@@ -206,7 +268,7 @@
 </ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
+    <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
@@ -233,7 +295,7 @@ Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
 
 <!-- 多说评论框 start -->
 <!--
-  <div class="ds-thread" data-thread-key="" data-title="Index &mdash; Quantum Field Theory 0.0.1 documentation" data-url=""></div>
+  <div class="ds-thread" data-thread-key="" data-title="2.3. Gauge Symmetries &mdash; Quantum Field Theory 0.0.1 documentation" data-url=""></div>
 -->
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -277,6 +339,9 @@ var duoshuoQuery = {short_name:"sci2fi"};
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
       
+      |
+      <a href="../_sources/symmetries/gauge-symmetries.txt"
+          rel="nofollow">Page source</a></li>
     </div>
 
     

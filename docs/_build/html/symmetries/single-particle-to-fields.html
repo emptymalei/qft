@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>1. Preliminary &mdash; Quantum Field Theory 0.0.1 documentation</title>
+    <title>2.1. From Particles to Fields &mdash; Quantum Field Theory 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -28,8 +28,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Quantum Field Theory 0.0.1 documentation" href="../index.html" />
-    <link rel="next" title="1.1. Questions" href="questions.html" />
-    <link rel="prev" title="Quantum Field Theory Notes" href="../index.html" />
+    <link rel="up" title="2. Lagrangian" href="index.html" />
+    <link rel="next" title="2.2. Noether’s Theorem" href="noether-theorem.html" />
+    <link rel="prev" title="2. Lagrangian" href="index.html" />
 <!-- <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-66327435-2']);
@@ -79,7 +80,7 @@
   
   <meta name="author" content="Lei Ma">
   
-  <link rel="canonical" href="http://qft.readthedocs.io/preliminary/index.html"/>
+  <link rel="canonical" href="http://qft.readthedocs.io/symmetries/single-particle-to-fields.html"/>
 
 
 
@@ -149,12 +150,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="questions.html" title="1.1. Questions"
+          <a href="noether-theorem.html" title="2.2. Noether’s Theorem"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="Quantum Field Theory Notes"
+          <a href="index.html" title="2. Lagrangian"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Quantum Field Theory 0.0.1 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantum Field Theory 0.0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Lagrangian</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -163,13 +165,95 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="preliminary">
-<h1>1. Preliminary<a class="headerlink" href="#preliminary" title="Permalink to this headline">¶</a></h1>
-<p>This chapter is about the preliminary knowledge required by this topic.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="questions.html">1.1. Questions</a></li>
+  <div class="section" id="from-particles-to-fields">
+<h1>2.1. From Particles to Fields<a class="headerlink" href="#from-particles-to-fields" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter we discuss the Lagrangian formalism of particles and fields.</p>
+<ol class="arabic simple">
+<li>Lagrangian and Euler-Lagrangian equation of single particle;</li>
+<li>Generalize single particle formalism to fields;</li>
+<li>Using the least action principle to derive some famous equation of motions: Klein-Gordon equation, Dirac equation, Maxwell equation, and equation for massive vector particles.</li>
+<li>Relation to statistical mechanics.</li>
+</ol>
+<div class="section" id="classical-mechanics">
+<h2>2.1.1. Classical Mechanics<a class="headerlink" href="#classical-mechanics" title="Permalink to this headline">¶</a></h2>
+<p>For single particle, we define a Lagrangian <span class="math">\(L(q_i,\dot q_i, t)\)</span> which is a function of generalized coordinate <span class="math">\(q_i\)</span>, its derivative, and time <span class="math">\(t\)</span>. To be precise, the generalized coordinates could be time dependent.</p>
+<p>Action is defined as the integral of Lagrangian over time,</p>
+<div class="math">
+\[S = \int dt L(q_i,\dot q_i, t).\]</div>
+<p>The principle that leads to the equation of motion that the particle obays is the one that extremize the action. Mathematically,</p>
+<div class="math">
+\[\delta S = 0,\]</div>
+<p>which gives us the Euler-Lagrangian equation,</p>
+<div class="math">
+\[\partial_t \left( \frac{\partial L}{\partial \dot q_i} \right) - \frac{\partial L}{\partial q_i} = 0.\]</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Derivation of Euler-Lagrangian Equation</p>
+<ul class="last simple">
+<li>[ ] Here goes the derivation</li>
 </ul>
+</div>
+<p>On the other hand, a Legendre transform of the Lagrangian is the Hamiltonian. For single particle</p>
+<div class="math">
+\[H = \dot q p - L,\]</div>
+<p>where the generalized momentum is <span class="math">\(p = \partial L/\partial \dot q\)</span>. The equation of motion starting from Hamiltonian is</p>
+<div class="math">
+\[\begin{split}\dot q &amp;= \frac{\partial H}{\partial p},\\
+\dot p &amp;= -\frac{\partial H}{\partial q}.\end{split}\]</div>
+</div>
+<div class="section" id="generalization-to-fields">
+<h2>2.1.2. Generalization to Fields<a class="headerlink" href="#generalization-to-fields" title="Permalink to this headline">¶</a></h2>
+<p>For single particle, the dynamics is described by where the particle is at a certain time. However, field spans over space and evolve over time. Thus we define a Lagrangian <span class="math">\(\mathcal L\)</span> at each space point, which should be called Lagrangian density. Integrate over space we find the Lagrangian</p>
+<div class="math">
+\[L = \int d^3x \mathcal L.\]</div>
+<p>To be more specific, Lagrangian density is a function of <span class="math">\(\phi_i(x^\mu)\)</span>, <span class="math">\(\phi_i(x^\mu)_{,\mu}\)</span>, where <span class="math">\(x^\mu\)</span> are the space time coordinates. Then</p>
+<div class="math">
+\[L(t) = \int d^3x \mathcal L(\phi_i(x^\mu),\phi_i(x^\mu)_{,\mu}).\]</div>
+<div class="hint admonition">
+<p class="first admonition-title">Lagrangian and Lagrangian Density</p>
+<p class="last">In quantum field theory, Lagrangian density is usually called Lagrangian.</p>
+</div>
+<p>Similar to single particle theory, action is defined as integral of Lagrangian over time,</p>
+<div class="math">
+\[S = \int dt L(t).\]</div>
+<p>Apply the same principle as the single particle case, we can derive the Euler-Lagrangian for the fields</p>
+<div class="math">
+\[\partial_\mu \left( \frac{\partial \mathcal L}{\partial ( \phi_{i,\mu} )} \right) - \frac{\partial \mathcal L}{\partial \phi_i} = 0.\]</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Derivation of Euler-Lagrangian Equation</p>
+<ul class="last simple">
+<li>[ ] Here goes the derivation</li>
+</ul>
+</div>
+<p>We can also define a momentum of field <span class="math">\(\phi_i\)</span>,</p>
+<div class="math">
+\[\Pi(x^\mu) = \frac{ \partial \mathcal L }{ \partial ( \partial_0 \phi_i )  }.\]</div>
+<p>The Hamiltonian density follows</p>
+<div class="math">
+\[\mathcal H = \dot \phi_i \Pi - \mathcal L.\]</div>
+</div>
+<div class="section" id="examples-of-lagrangian">
+<h2>2.1.3. Examples of Lagrangian<a class="headerlink" href="#examples-of-lagrangian" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="klein-gordon-equation">
+<h3>2.1.3.1. Klein-Gordon Equation<a class="headerlink" href="#klein-gordon-equation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="dirac-equation">
+<h3>2.1.3.2. Dirac Equation<a class="headerlink" href="#dirac-equation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="maxwell-equation">
+<h3>2.1.3.3. Maxwell Equation<a class="headerlink" href="#maxwell-equation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="equation-for-massive-vector-particles">
+<h3>2.1.3.4. Equation for Massive Vector Particles<a class="headerlink" href="#equation-for-massive-vector-particles" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="shrodinger-equation">
+<h3>2.1.3.5. Shrodinger Equation<a class="headerlink" href="#shrodinger-equation" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="refs-and-notes">
+<h2>2.1.4. Refs and Notes<a class="headerlink" href="#refs-and-notes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><em>Field Theory : A Modern Primer</em> by Pierre Ramond. The first chapter of this book is &#8220;How to Build an Action Functional&#8221;, which is self-explanary.</li>
+</ol>
 </div>
 </div>
 
@@ -196,11 +280,19 @@
 <h3>Contents</h3>
 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">1. Preliminary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="questions.html">1.1. Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preliminary/index.html">1. Preliminary</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Lagrangian</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">2.1. From Particles to Fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#classical-mechanics">2.1.1. Classical Mechanics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generalization-to-fields">2.1.2. Generalization to Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples-of-lagrangian">2.1.3. Examples of Lagrangian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#refs-and-notes">2.1.4. Refs and Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../symmetries/index.html">2. Lagrangian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="noether-theorem.html">2.2. Noether&#8217;s Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gauge-symmetries.html">2.3. Gauge Symmetries</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../quantization/index.html">3. Quantization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../susy/index.html">4. Supersymmetry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ref.html">5. References</a></li>
@@ -246,7 +338,7 @@ Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
 
 <!-- 多说评论框 start -->
 <!--
-  <div class="ds-thread" data-thread-key="" data-title="1. Preliminary &mdash; Quantum Field Theory 0.0.1 documentation" data-url=""></div>
+  <div class="ds-thread" data-thread-key="" data-title="2.1. From Particles to Fields &mdash; Quantum Field Theory 0.0.1 documentation" data-url=""></div>
 -->
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -291,7 +383,7 @@ var duoshuoQuery = {short_name:"sci2fi"};
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
       
       |
-      <a href="../_sources/preliminary/index.txt"
+      <a href="../_sources/symmetries/single-particle-to-fields.txt"
           rel="nofollow">Page source</a></li>
     </div>
 

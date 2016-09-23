@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.4. Symmetry Breaking &mdash; Quantum Field Theory 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Quantum Field Theory 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="2. Lagrangian" href="index.html" />
+    <link rel="next" title="3. Quantization" href="../quantization/index.html" />
+    <link rel="prev" title="2.3. Gauge Symmetries" href="gauge-symmetries.html" />
+<!-- <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-66327435-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+ -->
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  <html lang="en">
+
+
+  
+  <meta name="description" content="Quantum Field Theory Notes">
+  
+
+
+  
+  <meta name="keywords" content="Quantum Field Theory, Quantum, Field Theory">
+  
+
+
+  
+  <meta name="author" content="Lei Ma">
+  
+  <link rel="canonical" href="http://qft.readthedocs.io/symmetries/symmetry-breaking.html"/>
+
+
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+  </script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"]
+      });
+   });
+   </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      processEscapes: true
+    }
+  });
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        overlr: ['\\overset\\leftrightarrow{\#1}',1],
+        overl: ['\\overset\leftarrow{\#1}',1],
+        overr: ['\\overset\rightarrow{\#1}',1],
+        bra: ['\\left\\langle \#1\\right|',1],
+        ket: ['\\left| \#1\\right\\rangle',1],
+        braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+        avg: ['\\left< \#1 \\right>',1],
+        slashed: ['\\cancel{\#1}',1],
+        bold: ['\\boldsymbol{\#1}',1],
+        sech: ['\\operatorname{sech}{\#1}',1],
+        csch: ['\\operatorname{csch}{\#1}',1]
+      }
+    }
+  });
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+ 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../quantization/index.html" title="3. Quantization"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gauge-symmetries.html" title="2.3. Gauge Symmetries"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantum Field Theory 0.0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Lagrangian</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="symmetry-breaking">
+<h1>2.4. Symmetry Breaking<a class="headerlink" href="#symmetry-breaking" title="Permalink to this headline">¶</a></h1>
+<p>Introducing mass to gauge bosons will break the U(1) local gauge symmetry.</p>
+<div class="toggle admonition">
+<p class="first admonition-title">But wait, why preserving U(1) symmetry?</p>
+<ol class="arabic simple">
+<li>But wait, why do we need to preserve U(1) symmetry?</li>
+<li>We introduce mass to bosons regardless of the breaking of U(1) symmetry.</li>
+<li>Such a mass term will lead to infinity in e-e scattering loop. (By counting the orders of moment, we know this is not finite.)</li>
+<li>Introduce cut-off to momentum.</li>
+<li>Still have infinity in higher order loop diagrams.</li>
+<li>Introduce infinite numbers of cut-off for the infinite infinities of infinite higher order loop diagrams.</li>
+<li>WTF.</li>
+</ol>
+<p class="last">So we can not just simply introduce the mass term.</p>
+</div>
+<div class="section" id="spontaneous-breaking-of-gauge-symmetry">
+<h2>2.4.1. Spontaneous Breaking of Gauge Symmetry<a class="headerlink" href="#spontaneous-breaking-of-gauge-symmetry" title="Permalink to this headline">¶</a></h2>
+<p>We can not simply write a mass term in the Lagrangian. However, mass is simply an interaction term quadratic in the field, e.g. <span class="math">\(-m^2\phi^2\)</span>. Geometrically speaking, we need a upward opening quadratic potential of the field, i.e., <a class="reference internal" href="#fig-parabola"><span>Fig. 2.1</span></a>.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-parabola"></span><img alt="../_images/parabola.png" src="../_images/parabola.png" />
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">To have mass we need a potential with parabola shape at least around the minimium which is the vacuum. Another requirement is that the potential should be bounded.</span></p>
+</div>
+<p>The point is, since we are talking about the perturbation around the minima, we can also construct a potential with more complicated shape but is has quadratic term around the minina, e.g., <a class="reference internal" href="#fig-quadratic-around-minima"><span>Fig. 2.2</span></a>.</p>
+<div class="figure align-center" id="id2">
+<span id="fig-quadratic-around-minima"></span><img alt="../_images/higher-order.png" src="../_images/higher-order.png" />
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">This potential also have a parabola shape around the minima.</span></p>
+</div>
+<div class="section" id="spontaneous-breaking-local-gauge-symmetry">
+<h3>2.4.1.1. Spontaneous Breaking Local Gauge Symmetry<a class="headerlink" href="#spontaneous-breaking-local-gauge-symmetry" title="Permalink to this headline">¶</a></h3>
+<p>Mathematically the simplest Lagrangian for a <strong>real scalar field</strong> that could possibly have a mass that we can think of is</p>
+<div class="math">
+\[\mathcal L = \frac{1}{2}\partial_\mu \phi \partial^\mu \phi - \frac{1}{2} \mu^2  \phi^2 - \frac{1}{4}\lambda \phi^4,\]</div>
+<p>where we set <span class="math">\(\mu^2 &lt; 0\)</span> and <span class="math">\(\lambda &gt; 0\)</span>.</p>
+<p>Notice that we have local gauge symmetry holds. By intuition we expect the field to have a quadratic shape around the minima since this is a quartic potential. Indeed we Taylor expand the potential around the right minimaium <span class="math">\(\phi_0\)</span>,and define a new field around the minimium <span class="math">\(\eta(x) = \phi(x) - \phi_0\)</span>. The Lagrangian becomes</p>
+<div class="math">
+\[\mathcal L ' = \frac{1}{2} \partial_\mu \eta \partial^\mu \eta - \lambda \phi_0^2  \eta^2 + \text{higher order terms} + \text{constant},\]</div>
+<p>where we spot the quadratic term <span class="math">\(- \lambda \phi_0^2  \eta^2\)</span> so that mass of the field <span class="math">\(\eta\)</span> around its vacuum (minimium) can be defined as <span class="math">\(m^2 \equiv \lambda \phi_0^2\)</span>.</p>
+<p>The two Lagrangians describes the samething around the minimium point <span class="math">\(\phi_0\)</span>. We notice that the local gauge invariance is broken for field <span class="math">\(\eta\)</span>.</p>
+<div class="toggle admonition">
+<p class="first admonition-title">What is broken?</p>
+<p>Both Lagrangian <span class="math">\(\mathcal L\)</span> and <span class="math">\(\mathcal L'\)</span> are invariant under the local gauge transformation of field <span class="math">\(\phi\)</span>. But they are all changed under a gauge transformation of field <span class="math">\(\eta\)</span>.</p>
+<p>What does that mean?</p>
+<p>Since our particle physics are always dealing with small amount of particles, the physics is described by a field near the minimium potential point, which can be called vacuum of the field. When we are doing experiments near the vacuum, we do not see the big picture that the whole potential is quartic.</p>
+<p class="last"><strong>That is to say, we are talking about a field :math:`eta` that varying around a minimium potential point.</strong> What we see is a small parabola (quadratic terms) with some corrections (higher order terms). Any potential that can give us a parabola like potential at its minimium will possibly work.</p>
+</div>
+<p>The same trick can be done for complex fields. The Lagrangian we are interested in is</p>
+<div class="math">
+\[\mathcal L = \partial_\mu \phi^* \partial^\mu \phi - \mu^2 \phi^* \phi - \lambda (\phi^* \phi)^2,\]</div>
+<p>where we also have <span class="math">\(\mu^2 &lt; 0\)</span> and <span class="math">\(\lambda &gt; 0\)</span>. The potential is a Mexican hat, c.f. <a class="reference internal" href="#potential-complex-field-densityplot"><span>Fig. 2.3</span></a>.</p>
+<div class="figure align-center" id="id3">
+<span id="potential-complex-field-densityplot"></span><img src="../_images/potential-complex-field-densityplot.svg" /><p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Density plot of the quartic potential. Darker color means smaller potential while brighter color means larger potential. The ring is where the potential minimium is located.</span></p>
+</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Mathematica code for the density plot</p>
+<blockquote class="last">
+<div>range = 1.5; DensityPlot[Log[1000 (1/4 (x^2 + y^2)^2 - 1/2 (x^2 + y^2) + 1/4)], {x, -range, range}, {y, -range, range}, Frame -&gt; False, PlotRange -&gt; Full, ColorFunction -&gt; GrayLevel(<em>&#8220;SunsetColors&#8221;</em>), PerformanceGoal -&gt; &#8220;Quality&#8221;, ColorFunctionScaling -&gt; True, PlotPoints -&gt; 300, Axes -&gt; True, AxesLabel -&gt; {&#8220;Re[[Phi]]&#8221;, &#8220;Im[[Phi]]&#8221;}, Ticks -&gt; None, ImageSize -&gt; Large]</div></blockquote>
+</div>
+<p>Since we have two degrees of freedom, we can look at two directions. The direction that circles the ring is the direction that the potential has no change, while the perturbation in the radial direction needs to climb on and off potentials. The potential in the radial direction has a quadratic term around minima. The radial direction perturbation generates mass, however the circular direction perturbation doesn&#8217;t generate mass. The massless boson is <span class="highlight-text">Goldstone boson</span>, <strong>which becomes a problem because we get a massless mode of the particle</strong>.</p>
+<p>Similar picture can be established for three component fields, which has a potential minimium on a 3D spherical surface. The perturbation around that minimium needs three degrees of freedom, thus generating 2 massless Goldstone bosons and one massive boson and one massive boson in the perturbation of radial direction.</p>
+</div>
+</div>
+<div class="section" id="spontaneous-breaking-of-local-gauge-symmetry">
+<h2>2.4.2. Spontaneous Breaking of Local Gauge Symmetry<a class="headerlink" href="#spontaneous-breaking-of-local-gauge-symmetry" title="Permalink to this headline">¶</a></h2>
+<p>To keep the local gauge invariance, we write the Lagrangian as</p>
+<div class="math">
+\[\mathrm D_\mu \phi^* \mathrm D^\mu \phi - \frac{1}{4} F_{\mu\nu}F^{\mu\nu},\]</div>
+<p>where covariant derivative is <span class="math">\(\mathrm D_\mu = \partial_\mu - i eA_{\mu}\)</span>. Perform the trick of quartic potential, the Lagrangian becomes</p>
+<div class="math">
+\[\mathcal L = \mathrm D_\mu \phi^* \mathrm D^\mu \phi -\mu^2 \phi^*\phi - \lambda (\phi^* \phi)^2 - \frac{1}{4} F_{\mu\nu}F^{\mu\nu}.\]</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Why a negative sign for the kinetic term of gauge field <span class="math">\(-\frac{1}{4} F_{\mu\nu}F^{\mu\nu}\)</span>?</p>
+<p>Quick and simple answer:</p>
+<p class="last">Check the components that contains the time derivative of the field <span class="math">\(A_\mu\)</span>.</p>
+</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Local gauge transformation</p>
+<div class="last math">
+\[\begin{split}\phi \to &amp; e^{i\alpha(x)}\phi , \\
+A_\mu \to &amp; A_\mu + \frac{1}{e} \partial_\mu \alpha.\end{split}\]</div>
+</div>
+<p>To work out the perturbation theory, we take the old school treatment,</p>
+<div class="math">
+\[\phi = \frac{1}{\sqrt{2}}(\phi_0 + \eta + i\xi ).\]</div>
+<p>The expanded Lagrangian is</p>
+<div class="math">
+\[\mathcal L' = \frac{1}{2} \partial_\mu \eta \partial^\mu \eta + \frac{1}{2} \partial_\mu \xi \partial^\mu \xi - \phi_0^2 \lambda \eta^2 + \frac{1}{2} e^2 \phi_0^2  A_\mu A^\mu - e \phi_0 A_\mu \partial^\mu \xi - \frac{1}{4}F_{\mu\nu} F^{\mu\nu} + \text{other terms}.\]</div>
+<p>We are super happy to locate the terms <span class="math">\(- \phi_0^2 \lambda \eta^2\)</span> and <span class="math">\(\frac{1}{2} e^2 \phi_0^2  A_\mu A^\mu\)</span> since they give mass to <span class="math">\(\eta\)</span> field and <span class="math">\(A_\mu\)</span> gauge field.</p>
+<div class="warning admonition">
+<p class="first admonition-title">Problems</p>
+<p>However, we still have a massless Goldstone boson <span class="math">\(m_\xi=0\)</span>.</p>
+<p class="last">Meanwhile, we notice that the term <span class="math">\(- e \phi_0 A_\mu \partial^\mu \xi\)</span> is weird because we have a <strong>direct transformation from one field to another</strong>!</p>
+</div>
+<div class="hint admonition">
+<p class="first admonition-title">HINT</p>
+<p class="last">Or maybe not? We do not expect such direct tranformation. But maybe they are actually the SAME field! By <strong>interpreting</strong> the <span class="math">\(\xi\)</span> field as part of the gauge field can eliminate the massless Goldstone boson.</p>
+</div>
+<p>To support such conjecture, we need to choose a different set of real field instead of the original <span class="math">\(\eta\)</span>, <span class="math">\(\xi\)</span>, and <span class="math">\(A_\mu\)</span>. We have been using Cartesian coordinates since the very beginning of this trick. But polar coordinates are better for spherically symmetric potential. So we rewrite the field as</p>
+<div class="math">
+\[\begin{split}\phi =&amp; \frac{1}{\sqrt{2}} (\phi_0 + h(x)) e^{i \theta(x)/\phi_0}, \\
+A_\mu' = A_\mu + \frac{1}{e\phi_0} \partial_\mu \theta,\end{split}\]</div>
+<p>where <span class="math">\(h\)</span>, <span class="math">\(\theta\)</span> are real and <span class="math">\(\phi_0\)</span> is where the minimium potential is reached.</p>
+<p>A miracle happens immediately,</p>
+<div class="math">
+\[\mathcal L' = \frac{1}{2} \partial_\mu h \partial^\mu h - \lambda \phi_0^2 h^2 + \frac{1}{2} e^2\phi_0^2  A'_\mu A'^\mu + \frac{1}{2} e^2 A'_\mu A'^\mu h^2  - \lambda \phi_0 h^3 - \frac{1}{4} \lambda h^4 + \phi_0 e^2 A'_\mu A'^\mu h - \frac{1}{4} F_{\mu\nu} F^{\mu\nu}.\]</div>
+<p>The field <span class="math">\(\theta\)</span> is gone. Meanwhile the two real fields <span class="math">\(h\)</span> and <span class="math">\(A_\mu\)</span> gain mass.</p>
+<div class="toggle admonition">
+<p class="first admonition-title">What is the magic?</p>
+<p>The magic is that the massless Goldstone boson by field <span class="math">\(\xi\)</span> becomes part of the gauge field <span class="math">\(A_\mu\)</span>.</p>
+<p>Mathematically, we notice that the two expansion are related to each other under the condition of perturbation in both fields</p>
+<div class="math">
+\[\frac{1}{\sqrt{2}} (\phi_0 + h) e^{i\theta/\phi_0} = \frac{1}{\sqrt{2}} (\phi_0 + h) (1 + i \frac{\theta}{\phi_0}) = \frac{1}{\sqrt{2}} (\phi_0 + h + i \theta + i \frac{h\theta}{\phi_0}),\]</div>
+<p>where the last term <span class="math">\(i \frac{h\theta}{\phi_0}\)</span> is higher order in the perturbation fields so we drop it. Field <span class="math">\(h\)</span> corresponds to <span class="math">\(\eta\)</span> while field <span class="math">\(\theta\)</span> corresponds to <span class="math">\(\xi\)</span>.</p>
+<p class="last">However, the difference is that here we do not need to perturb the field <span class="math">\(\theta\)</span> since it&#8217;s gone in the Lagragian. And it should NOT be in there in principle. The perturbation method using <span class="math">\(\eta\)</span> and <span class="math">\(\xi\)</span> introduced a spurious field.</p>
+</div>
+</div>
+<div class="section" id="references-and-notes">
+<h2>2.4.3. References and Notes<a class="headerlink" href="#references-and-notes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Halzen &amp; Martin</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Quantum Field Theory</a></h1>
+
+
+
+<p class="blurb">Quantum Field Theory</p>
+
+
+
+<p>
+<iframe src="http://ghbtns.com/github-btn.html?user=emptymalei&repo=qft&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+<h3>Contents</h3>
+<p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../preliminary/index.html">1. Preliminary</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Lagrangian</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="single-particle-to-fields.html">2.1. From Particles to Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="noether-theorem.html">2.2. Noether&#8217;s Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gauge-symmetries.html">2.3. Gauge Symmetries</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">2.4. Symmetry Breaking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#spontaneous-breaking-of-gauge-symmetry">2.4.1. Spontaneous Breaking of Gauge Symmetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spontaneous-breaking-of-local-gauge-symmetry">2.4.2. Spontaneous Breaking of Local Gauge Symmetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references-and-notes">2.4.3. References and Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quantization/index.html">3. Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../susy/index.html">4. Supersymmetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref.html">5. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">6. Acknowledgement</a></li>
+</ul>
+
+
+<ul>
+	<li><a href="genindex.html">INDEX</a></li>
+</ul>
+<h3>Links</h3>
+<ul>
+   <li class="toctree-l1"><a href="http://neutrino.xyz" style="color:orange;"><i class="fa fa-globe"></i>&nbsp;Neutrino Physics</a></li>
+   <li class="toctree-l1"><a href="http://physics.openmetric.org" style="color:orange;"><i class="fa fa-fire"></i>&nbsp;Physics Notes</a></li>
+   <li class="toctree-l1"><a href="http://neutrino.xyz/neutrino-map" style="color:orange;"><i class="fa fa-map-signs"></i>&nbsp;Neutrino Map</a></li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3>Support Us</h3>
+<p>
+Support us on <a href="https://www.gratipay.com/">Gratipay</a> :
+<script data-gratipay-username="emptymalei"
+        data-gratipay-widget="button"
+        src="//gttp.co/v1.js"></script>
+</p>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer" style="border-top:1px solid #B1B4B6;">
+
+<!-- 多说评论框 start -->
+<!--
+  <div class="ds-thread" data-thread-key="" data-title="2.4. Symmetry Breaking &mdash; Quantum Field Theory 0.0.1 documentation" data-url=""></div>
+-->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!--
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sci2fi"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+-->
+<!-- 多说公共JS代码 end -->
+
+<!-- Disqus BEGIN -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'qft';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<!-- Disqus END -->
+
+
+      &copy;2016, Lei Ma. | <a href="index.html">Licenses</a>
+      |
+      <a href="/genindex.html">Index</a>
+      |
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="../_sources/symmetries/symmetry-breaking.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-49034078-11']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>
