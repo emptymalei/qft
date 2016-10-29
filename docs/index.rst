@@ -22,6 +22,7 @@ Here is also an index: `genindex.html <genindex.html>`_ .
    preliminary/index.rst
    symmetries/index.rst
    quantization/index.rst
+   weak-interaction/index.rst
    susy/index.rst
    ref.rst
    acknowledgement.rst

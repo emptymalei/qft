@@ -28,7 +28,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Quantum Field Theory 0.0.1 documentation" href="../index.html" />
-    <link rel="up" title="2. Lagrangian" href="index.html" />
+    <link rel="up" title="2. Symmetries" href="index.html" />
     <link rel="next" title="3. Quantization" href="../quantization/index.html" />
     <link rel="prev" title="2.3. Gauge Symmetries" href="gauge-symmetries.html" />
 <!-- <script type="text/javascript">
@@ -156,7 +156,7 @@
           <a href="gauge-symmetries.html" title="2.3. Gauge Symmetries"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Quantum Field Theory 0.0.1 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Lagrangian</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">2. Symmetries</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -193,20 +193,20 @@
 <span id="fig-quadratic-around-minima"></span><img alt="../_images/higher-order.png" src="../_images/higher-order.png" />
 <p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">This potential also have a parabola shape around the minima.</span></p>
 </div>
-<div class="section" id="spontaneous-breaking-local-gauge-symmetry">
-<h3>2.4.1.1. Spontaneous Breaking Local Gauge Symmetry<a class="headerlink" href="#spontaneous-breaking-local-gauge-symmetry" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="spontaneous-breaking-global-gauge-symmetry">
+<h3>2.4.1.1. Spontaneous Breaking Global Gauge Symmetry<a class="headerlink" href="#spontaneous-breaking-global-gauge-symmetry" title="Permalink to this headline">¶</a></h3>
 <p>Mathematically the simplest Lagrangian for a <strong>real scalar field</strong> that could possibly have a mass that we can think of is</p>
 <div class="math">
 \[\mathcal L = \frac{1}{2}\partial_\mu \phi \partial^\mu \phi - \frac{1}{2} \mu^2  \phi^2 - \frac{1}{4}\lambda \phi^4,\]</div>
 <p>where we set <span class="math">\(\mu^2 &lt; 0\)</span> and <span class="math">\(\lambda &gt; 0\)</span>.</p>
-<p>Notice that we have local gauge symmetry holds. By intuition we expect the field to have a quadratic shape around the minima since this is a quartic potential. Indeed we Taylor expand the potential around the right minimaium <span class="math">\(\phi_0\)</span>,and define a new field around the minimium <span class="math">\(\eta(x) = \phi(x) - \phi_0\)</span>. The Lagrangian becomes</p>
+<p>Notice that we have global gauge symmetry holds. By intuition we expect the field to have a quadratic shape around the minima since this is a quartic potential. Indeed we Taylor expand the potential around the right minimaium <span class="math">\(\phi_0\)</span>,and define a new field around the minimium <span class="math">\(\eta(x) = \phi(x) - \phi_0\)</span>. The Lagrangian becomes</p>
 <div class="math">
 \[\mathcal L ' = \frac{1}{2} \partial_\mu \eta \partial^\mu \eta - \lambda \phi_0^2  \eta^2 + \text{higher order terms} + \text{constant},\]</div>
 <p>where we spot the quadratic term <span class="math">\(- \lambda \phi_0^2  \eta^2\)</span> so that mass of the field <span class="math">\(\eta\)</span> around its vacuum (minimium) can be defined as <span class="math">\(m^2 \equiv \lambda \phi_0^2\)</span>.</p>
-<p>The two Lagrangians describes the samething around the minimium point <span class="math">\(\phi_0\)</span>. We notice that the local gauge invariance is broken for field <span class="math">\(\eta\)</span>.</p>
+<p>The two Lagrangians describes the samething around the minimium point <span class="math">\(\phi_0\)</span>. We notice that the global gauge invariance is broken for field <span class="math">\(\eta\)</span>.</p>
 <div class="toggle admonition">
 <p class="first admonition-title">What is broken?</p>
-<p>Both Lagrangian <span class="math">\(\mathcal L\)</span> and <span class="math">\(\mathcal L'\)</span> are invariant under the local gauge transformation of field <span class="math">\(\phi\)</span>. But they are all changed under a gauge transformation of field <span class="math">\(\eta\)</span>.</p>
+<p>Both Lagrangian <span class="math">\(\mathcal L\)</span> and <span class="math">\(\mathcal L'\)</span> are invariant under the global gauge transformation of field <span class="math">\(\phi\)</span>. But they are all changed under a gauge transformation of field <span class="math">\(\eta\)</span>.</p>
 <p>What does that mean?</p>
 <p>Since our particle physics are always dealing with small amount of particles, the physics is described by a field near the minimium potential point, which can be called vacuum of the field. When we are doing experiments near the vacuum, we do not see the big picture that the whole potential is quartic.</p>
 <p class="last"><strong>That is to say, we are talking about a field :math:`eta` that varying around a minimium potential point.</strong> What we see is a small parabola (quadratic terms) with some corrections (higher order terms). Any potential that can give us a parabola like potential at its minimium will possibly work.</p>
@@ -313,7 +313,7 @@ A_\mu' = A_\mu + \frac{1}{e\phi_0} \partial_\mu \theta,\end{split}\]</div>
 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../preliminary/index.html">1. Preliminary</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Lagrangian</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Symmetries</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="single-particle-to-fields.html">2.1. From Particles to Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="noether-theorem.html">2.2. Noether&#8217;s Theorem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gauge-symmetries.html">2.3. Gauge Symmetries</a></li>
@@ -326,9 +326,10 @@ A_\mu' = A_\mu + \frac{1}{e\phi_0} \partial_\mu \theta,\end{split}\]</div>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../quantization/index.html">3. Quantization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../susy/index.html">4. Supersymmetry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ref.html">5. References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">6. Acknowledgement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../weak-interaction/index.html">4. Weak Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../susy/index.html">5. Supersymmetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref.html">6. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">7. Acknowledgement</a></li>
 </ul>
 
 

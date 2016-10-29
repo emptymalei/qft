@@ -43,7 +43,7 @@ The point is, since we are talking about the perturbation around the minima, we 
    This potential also have a parabola shape around the minima.
 
 
-Spontaneous Breaking Local Gauge Symmetry
+Spontaneous Breaking Global Gauge Symmetry
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mathematically the simplest Lagrangian for a **real scalar field** that could possibly have a mass that we can think of is
@@ -53,19 +53,19 @@ Mathematically the simplest Lagrangian for a **real scalar field** that could po
 
 where we set :math:`\mu^2 < 0` and :math:`\lambda > 0`.
 
-Notice that we have local gauge symmetry holds. By intuition we expect the field to have a quadratic shape around the minima since this is a quartic potential. Indeed we Taylor expand the potential around the right minimaium :math:`\phi_0`,and define a new field around the minimium :math:`\eta(x) = \phi(x) - \phi_0`. The Lagrangian becomes
+Notice that we have global gauge symmetry holds. By intuition we expect the field to have a quadratic shape around the minima since this is a quartic potential. Indeed we Taylor expand the potential around the right minimaium :math:`\phi_0`,and define a new field around the minimium :math:`\eta(x) = \phi(x) - \phi_0`. The Lagrangian becomes
 
 .. math::
    \mathcal L ' = \frac{1}{2} \partial_\mu \eta \partial^\mu \eta - \lambda \phi_0^2  \eta^2 + \text{higher order terms} + \text{constant},
 
 where we spot the quadratic term :math:`- \lambda \phi_0^2  \eta^2` so that mass of the field :math:`\eta` around its vacuum (minimium) can be defined as :math:`m^2 \equiv \lambda \phi_0^2`.
 
-The two Lagrangians describes the samething around the minimium point :math:`\phi_0`. We notice that the local gauge invariance is broken for field :math:`\eta`.
+The two Lagrangians describes the samething around the minimium point :math:`\phi_0`. We notice that the global gauge invariance is broken for field :math:`\eta`.
 
 .. admonition:: What is broken?
    :class: toggle
 
-   Both Lagrangian :math:`\mathcal L` and :math:`\mathcal L'` are invariant under the local gauge transformation of field :math:`\phi`. But they are all changed under a gauge transformation of field :math:`\eta`.
+   Both Lagrangian :math:`\mathcal L` and :math:`\mathcal L'` are invariant under the global gauge transformation of field :math:`\phi`. But they are all changed under a gauge transformation of field :math:`\eta`.
 
    What does that mean?
 

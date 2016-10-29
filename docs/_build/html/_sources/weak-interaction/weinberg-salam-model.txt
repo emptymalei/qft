@@ -1,0 +1,29 @@
+Weinberg-Salam Model
+======================
+
+Electroweak interaction is determined by local gauge invariance of Lagrangian. Specifically, we have two types of interactions
+
+.. math::
+   - i g \mathbf J_\mu \cdot \mathbf W^\mu  = & - i g \bar \xi_L \gamma_\mu \mathbf T\cdot \mathbf W^\mu \xi_L \\
+   - i \frac{g'}{2} j_\mu ^Y B^\mu = & - i g' \bar \psi \gamma_\mu \frac{Y}{2} \psi B^\mu,
+
+where :math:`\mathbf T` and :math:`Y` are generators of :math:`SU(2)_L` and :math:`U(1)`. The doublet :math:`\xi_L` and singlet :math:`\psi` fermions and bosons.
+
+For a group multiplication :math:`G = SU(2)_L \times U(1)`, the generators are related
+
+.. math::
+   Q = T^3 + \frac{Y}{2},
+
+where :math:`Q` is the generator of group :math:`G`.
+
+Then we can write down the currents
+
+.. math::
+   j^{\mathrm{em}}_\mu = j^3_{\mu} + \frac{1}{2}j^{Y}_\mu.
+
+Since we know the neutral currents :math:`j^3_{\mu}` and :math:`\frac{1}{2}j^{Y}_\mu`, we can calculate the EM current by adding them up. Hence we acutally can relate :math:`g` and :math:`g'` by looking at the coefficient of :math:`A^\mu` field.
+
+.. admonition:: Why does the Weinberg-Salam model work
+   :class: toggle
+
+   The choice of vacuum in Weinberg-Salam model is quite unique.
